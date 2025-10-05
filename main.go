@@ -5,6 +5,7 @@ import (
 	"crud-operation/models"
 	"crud-operation/routes"
 	"crud-operation/store"
+	"fmt"
 
 	"github.com/gin-gonic/gin"
 )
@@ -17,6 +18,8 @@ func main() {
 
 	store.ConnectDB(dbURL)
 	store.DB.AutoMigrate(&models.Employee{})
+
+	fmt.Println("database is successfully connected!!!...")
 
 	r := gin.Default()
 	routes.CrudRouters(r)
