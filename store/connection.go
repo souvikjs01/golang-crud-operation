@@ -15,5 +15,4 @@ func ConnectDB(dsn string) {
 	if err != nil {
 		log.Fatalf("Failed to connect to database: %v", err)
 	}
-	log.Println("Database connected successfully!")
 }

@@ -19,7 +19,7 @@ func main() {
 	store.ConnectDB(dbURL)
 	store.DB.AutoMigrate(&models.Employee{})
 
-	fmt.Println("database is successfully connected!!!...")
+	fmt.Println("database is successfully connected...")
 
 	r := gin.Default()
 	routes.CrudRouters(r)

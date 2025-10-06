@@ -10,7 +10,7 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o ./tmp/main main.go
+# RUN go build -o ./tmp/main main.go    since im using air
 
 EXPOSE 3000
 
