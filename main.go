@@ -6,6 +6,7 @@ import (
 	"crud-operation/routes"
 	"crud-operation/store"
 	"fmt"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
@@ -22,6 +23,12 @@ func main() {
 	fmt.Println("database is successfully connected...")
 
 	r := gin.Default()
+
+	r.GET("/", func(ctx *gin.Context) {
+		ctx.JSON(http.StatusOK, gin.H{
+			"message": "welcome to golang crud app",
+		})
+	})
 	routes.CrudRouters(r)
 
 	r.Run(":" + port)
