@@ -26,7 +26,7 @@ func main() {
 
 	r.GET("/", func(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, gin.H{
-			"message": "welcome to golang crud app",
+			"message": "welcome to golang crud application",
 		})
 	})
 	routes.CrudRouters(r)
